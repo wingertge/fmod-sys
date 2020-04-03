@@ -6,6 +6,9 @@ use std::path::PathBuf;
 fn main() {
     println!("cargo:rustc-link-lib=fmod");
 
+    #[cfg(feature = "studio")]
+    println!("cargo:rustc-link-lib=fmodstudio");
+
     let bindings = bindgen::Builder::default()
         .header("core-wrapper.h")
         .generate()

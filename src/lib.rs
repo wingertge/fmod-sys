@@ -2,6 +2,7 @@
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 
+#[cfg(not(feature = "studio"))]
 include!(concat!(env!("OUT_DIR"), "/bindings-core.rs"));
 
 #[cfg(feature = "studio")]

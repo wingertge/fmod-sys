@@ -17,6 +17,15 @@ fmod-sys = { git = "https://github.com/khonsulabs/fmod-sys.git" }
 
 You will need to put the fmod libraries in an appropriate location for linking to succeed.
 
+# Enabling Studio APIs
+
+By default, the core library and its API is all that is exported. If you want to enable the FMOD Studio API, enable the `studio` feature:
+
+```toml
+[dependencies]
+fmod-sys = { git = "https://github.com/khonsulabs/fmod-sys.git", features = ["studio"] }
+```
+
 # Building
 
 To update the headers, just copy them into the fmodapi folder, make sure the LICENSE.TXT doesn't need to be updated, and then the build.rs script should automatically generate the new bindings.
