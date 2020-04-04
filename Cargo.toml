@@ -7,6 +7,7 @@ license-file = "LICENSE"
 description = "Bindgen wrappers around the FMOD Core and Studio libraries"
 readme = "README.md"
 repository = "https://github.com/khonsulabs/fmod-sys"
+keywords = ["gamedev", "audio", "fmod"]
 
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -17,4 +18,4 @@ studio=[]
 [dependencies]
 
 [build-dependencies]
-bindgen = "*"
+bindgen = "0.53"
