@@ -11,6 +11,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Export env
+        run: LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/fmodapi/" export
       - name: Run tests on stable
         run: LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/fmodapi/" cargo test --all-features
 
