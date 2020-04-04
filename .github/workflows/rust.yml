@@ -12,7 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install fmod library for linking.
-        run: cp fmodapi/*.so /usr/lib/
+        run: cp fmodapi/libs/* /usr/lib/
+
       - name: Run tests on stable
         run: cargo test --all-features
 
