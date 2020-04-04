@@ -11,10 +11,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Export env
-        run: LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/fmodapi/" export
       - name: Run tests on stable
-        run: LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/fmodapi/" cargo test --all-features
+        run: cargo test --all-features
+        env:
+          LD_LIBRARY_PATH: /home/runner/work/fmod-sys/fmod-sys/fmodapi
 
       - name: Run tests on nightly
-        run: LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`pwd`/fmodapi/" cargo test +nightly --all-features
+        run: cargo test +nightly --all-features
+        env:
+          LD_LIBRARY_PATH: /home/runner/work/fmod-sys/fmod-sys/fmodapi
