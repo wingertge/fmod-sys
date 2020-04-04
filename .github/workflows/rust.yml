@@ -11,12 +11,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Install fmod library for linking.
+        run: cp fmodapi/*.so /usr/lib/
       - name: Run tests on stable
         run: cargo test --all-features
-        env:
-          LD_LIBRARY_PATH: /home/runner/work/fmod-sys/fmod-sys/fmodapi
 
       - name: Run tests on nightly
         run: cargo test +nightly --all-features
-        env:
-          LD_LIBRARY_PATH: /home/runner/work/fmod-sys/fmod-sys/fmodapi
